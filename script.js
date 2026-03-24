@@ -9,12 +9,14 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 	let res='';
-	for(let[symbol,val] of obj){
+	let values=Object.values(obj).sort((a,b)=>b[1]-a[1]);
+	for(let [symbol,val] of values){
 		while(num>=val){
 			res+=symbol;
 			num-=val
 		}
 	}
+	
 return res;
   //your code here
 
